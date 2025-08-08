@@ -56,9 +56,9 @@ vendor/
 ### Prerequisites
 
 - PHP >= 8.1
+- Laravel 10
 - Composer
 - MySQL or compatible database
-- Node.js & npm (for asset building)
 
 ### Installation
 
