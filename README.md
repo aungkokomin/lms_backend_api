@@ -1,122 +1,148 @@
-# Maal LMS API
+# README
 
-## Overview
+# Laravel LMS API
 
-Maal LMS API is a robust Learning Management System backend built with PHP using the Laravel framework. It provides a comprehensive set of RESTful endpoints to manage courses, students, instructors, and other educational resources.
+A robust backend API for a Learning Management System (LMS) built with Laravel. This system provides endpoints for managing users, roles, permissions, courses, lessons, bundles, certificates, wallets, and more.
 
-## Features
+---
 
-- Course management
-- Student enrollment and progress tracking
-- Instructor management
-- Lesson and content organization
-- User authentication and authorization
-- File uploads for educational materials and certifications
+## 🚀 Features
 
-## Requirements
+- **User Management:** Registration, authentication, roles, and permissions ([spatie/laravel-permission](https://github.com/spatie/laravel-permission))
+- **Course & Lesson Management:** CRUD for courses, modules, and lessons, including content image uploads
+- **Bundles:** Group multiple courses into bundles
+- **Certificates:** Issue, upload, and download certificates for students
+- **Wallet System:** Manage user wallets and transactions
+- **File Uploads:** Support for uploading images, documents, and certificates
+- **Queue Support:** Configurable queue drivers for background jobs
+- **Excel Import/Export:** ([maatwebsite/excel](https://github.com/Maatwebsite/Laravel-Excel))
+- **Notifications & Mail:** Integration with third-party mail services (Mailgun, Postmark, SES, etc.)
+- **API-First:** All features are exposed via RESTful API endpoints
 
-- PHP 8.1+
-- Composer
-- MySQL or compatible database
-- Node.js and NPM (for asset compilation)
+---
 
-## Installation
+## 📁 Project Structure
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/MaalTijarah/maal-lms-api.git
-   cd maal-lms-api
-   ```
-
-2. Install PHP dependencies:
-   ```bash
-   composer install
-   ```
-
-3. Install Node.js dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Create a copy of the `.env.example` file and rename it to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-
-5. Generate an application key:
-   ```bash
-   php artisan key:generate
-   ```
-
-6. Configure your database settings in the `.env` file.
-
-7. Run database migrations:
-   ```bash
-   php artisan migrate
-   ```
-
-8. (Optional) Seed the database with sample data:
-   ```bash
-   php artisan db:seed
-   ```
-
-## Usage
-
-To start the development server:
-
-```bash
-php artisan serve
+```
+app/
+  Console/
+  Events/
+  Exceptions/
+  Exports/
+  Helpers/
+  Http/
+  Interfaces/
+  Mail/
+  Models/
+  Notifications/
+  Providers/
+  Repositories/
+  Services/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+tests/
+vendor/
 ```
 
-The API will be available at `http://localhost:8000`.
+---
 
-## Development
+## 🛠️ Getting Started
 
-### Custom Artisan Commands
+### Prerequisites
 
-This project includes custom Artisan commands to streamline development:
+- PHP >= 8.1
+- Composer
+- MySQL or compatible database
+- Node.js & npm (for asset building)
 
-- Create a new repository:
-  ```bash
-  php artisan make:repository RepositoryName
-  ```
+### Installation
 
-- Create a new service:
-  ```bash
-  php artisan make:service ServiceName
-  ```
+- **Clone the repository**
+    
+    `git clone <repository-url> cd backend-lms-api`
+    
+- **Install PHP dependencies**
+    
+    `composer install`
+    
+- **Install Node dependencies**
+    
+    `npm install` 
+    
+- **Copy and configure environment variables**
+    
+    `cp .env.example .env` 
+    
+    - Edit `.env` to set your database and mail credentials
+- **Generate application key**
+    
+    `php artisan key:generate`
+    
+- **Run migrations**
+    
+    `php artisan migrate`
+    
+- **(Optional) Seed the database**
+    
+    `php artisan db:seed`
+    
+- **Build frontend assets**
+    
+    `npm run build`
+    
+- **Start the development server**
+    
+    `php artisan serve`
+    
 
-- Create a new repository interface:
-  ```bash
-  php artisan make:repository-interface InterfaceName
-  ```
+---
 
-### File Structure
-
-The project follows a modular structure with separate directories for:
-
-- Models
-- Controllers
-- Services
-- Repositories
-- Interfaces
-
-### Testing
-
-To run the test suite:
+## 🧪 Running Tests
 
 ```bash
 php artisan test
 ```
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## ⚙️ Configuration
 
-## License
+- **Queue:** Configure your queue driver in
+    
+    `config/queue.php`
+    
+- **Permissions:** Manage roles and permissions in
+    
+    `config/permission.php`
+    
+- **Mail & Services:** Set up third-party services in
+    
+    `config/services.php`
+    
+- **Excel:** Configure Excel import/export in
+    
+    `config/excel.php`
+    
 
-[MIT License](LICENSE.md)
+---
 
-## Contact
+## 💡 Useful Commands
 
-For any inquiries, please contact [support@maaledu.com].
+- `php artisan migrate:fresh --seed` — Reset and seed the database
+- `php artisan queue:work` — Start processing queued jobs
+- `php artisan storage:link` — Create a symbolic link for file uploads
+
+---
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+---
+
+*For more details, see the codebase and configuration files.*
